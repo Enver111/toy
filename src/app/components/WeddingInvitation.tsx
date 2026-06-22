@@ -146,7 +146,7 @@ export default function WeddingInvitation() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8"
+      className="min-h-screen flex flex-col items-center justify-center p-2"
       style={{
         background: "linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%)",
       }}
@@ -254,7 +254,7 @@ export default function WeddingInvitation() {
 
       {/* Footer Note */}
       <p
-        className="mt-8 text-md opacity-60 text-center"
+        className="mt-2 text-md opacity-60 text-center"
         style={{ fontFamily: "Cormorant, serif", color: "#8b7355" }}
       >
         Нажмите на приглашение, чтобы перевернуть
@@ -492,16 +492,14 @@ function BackSide({
   }, []);
 
   return (
-    <div className="relative flex h-full flex-col items-center justify-center p-5">
-      <div className="absolute inset-5 rounded-lg border border-wedding-gold/20 shadow-[inset_0_0_30px_rgb(194_162_130/0.05)]" />
-
-      <div className="relative z-10 w-full space-y-2 text-center">
+    <div className=" flex overflow-y-auto scrollbar-hide h-full flex-col items-center justify-between p-5">
+      <div className=" z-10 h-auto flex-1 w-full flex flex-col gap-2 items-center justify-between text-center p-2 rounded-lg border border-wedding-gold/20 shadow-[inset_0_0_30px_rgb(194_162_130/0.05)]">
         <Reveal animated={animated} playWhen={playWhen} delay={0.1}>
           <div>
             <p className="wedding-section-title text-lg font-bold ">
               Дорогие друзья и близкие!
             </p>
-            <p className="mt-2 font-cormorant text-lg leading-relaxed font-light text-wedding-accent">
+            <p className="font-cormorant text-lg leading-relaxed font-light text-wedding-accent">
               Приглашаем Вас отпраздновать самое важное событие в нашей жизни -
               день свадьбы!
             </p>
@@ -510,59 +508,57 @@ function BackSide({
 
         <div className="wedding-divider" />
 
-        <div className="space-y-2">
-          <Reveal animated={animated} playWhen={playWhen} delay={0.25}>
-            <div>
-              <p className="wedding-section-title font-bold text-lg">
-                Свадебный вечер
-              </p>
-              <p className=" font-cormorant text-2xl  italic text-wedding-accent font-bold">
-                18 июля 2026
-              </p>
-              <p className="wedding-body font-medium text-lg">
-                18:00 • Банкетный зал "Eshil Ada"
-              </p>
-              <p className="wedding-body-muted font-medium text-lg">
-                ул. Байрам, 5, г. Симферополь
-              </p>
-            </div>
-          </Reveal>
+        <Reveal animated={animated} playWhen={playWhen} delay={0.25}>
+          <div>
+            <p className="wedding-section-title font-bold text-lg">
+              Свадебный вечер
+            </p>
+            <p className=" font-cormorant text-2xl  italic text-wedding-accent font-bold">
+              18 июля 2026
+            </p>
+            <p className="wedding-body font-medium text-lg">
+              18:00 • Банкетный зал "Eshil Ada"
+            </p>
+            <p className="wedding-body-muted font-medium text-lg">
+              ул. Байрам, 5, г. Симферополь
+            </p>
+          </div>
+        </Reveal>
 
-          <div className="wedding-divider" />
+        <div className="wedding-divider" />
 
-          <Reveal animated={animated} playWhen={playWhen} delay={0.4}>
-            <div>
-              <p className="mb-3 font-playfair font-bold text-lg uppercase  text-wedding-accent">
-                До бракосочетания
+        <Reveal animated={animated} playWhen={playWhen} delay={0.4}>
+          <div>
+            <p className=" wedding-section-title text-lg font-bold">
+              До бракосочетания
+            </p>
+            {countdown.isPast ? (
+              <p className="font-cormorant text-2xl font-normal italic text-wedding-text">
+                Наш день настал!
               </p>
-              {countdown.isPast ? (
-                <p className="font-cormorant text-2xl font-normal italic text-wedding-text">
-                  Наш день настал!
-                </p>
-              ) : (
-                <div className="flex flex-wrap justify-center gap-3">
-                  {(
-                    [
-                      { value: countdown.days, label: "дней" },
-                      { value: countdown.hours, label: "часов" },
-                      { value: countdown.minutes, label: "минут" },
-                      { value: countdown.seconds, label: "секунд" },
-                    ] as const
-                  ).map(({ value, label }) => (
-                    <div key={label} className="min-w-[3.25rem] text-center">
-                      <p className="font-cormorant text-3xl leading-tight font-medium text-wedding-text">
-                        {String(value).padStart(2, "0")}
-                      </p>
-                      <p className="mt-0.5 font-cormorant text-xs font-light text-wedding-muted">
-                        {label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </Reveal>
-        </div>
+            ) : (
+              <div className="flex flex-wrap justify-center gap-3">
+                {(
+                  [
+                    { value: countdown.days, label: "дней" },
+                    { value: countdown.hours, label: "часов" },
+                    { value: countdown.minutes, label: "минут" },
+                    { value: countdown.seconds, label: "секунд" },
+                  ] as const
+                ).map(({ value, label }) => (
+                  <div key={label} className="min-w-[3.25rem] text-center">
+                    <p className="font-cormorant text-3xl leading-tight font-medium text-wedding-text">
+                      {String(value).padStart(2, "0")}
+                    </p>
+                    <p className="mt-0.5 font-cormorant text-xs font-light text-wedding-muted">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </Reveal>
 
         {/* <div className="wedding-divider" /> */}
 
@@ -609,7 +605,7 @@ function BackSide({
           animated={animated}
           playWhen={playWhen}
           delay={0.65}
-          className="mt-6 flex items-center justify-center"
+          className=" flex items-center justify-center"
         >
           <svg
             width="60"
