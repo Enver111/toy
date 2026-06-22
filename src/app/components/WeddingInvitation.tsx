@@ -443,24 +443,26 @@ function BackSide() {
     <div className="relative flex h-full flex-col items-center justify-center p-12">
       <div className="absolute inset-8 rounded-lg border border-wedding-gold/20 shadow-[inset_0_0_30px_rgb(194_162_130/0.05)]" />
 
-      <div className="relative z-10 max-w-md space-y-8 text-center">
+      <div className="relative z-10 max-w-md space-y-2 text-center">
         <div>
           <p className="font-cormorant text-2xl leading-relaxed font-bold italic text-wedding-text">
             Дорогие друзья и близкие!
           </p>
-          <p className="mt-4 font-cormorant text-xl leading-relaxed font-light text-wedding-accent">
-            Приглашаем вас разделить с нами
-            <br />
-            радость нашего торжественного дня
+          <p className="mt-2 font-cormorant text-lg leading-relaxed font-light text-wedding-accent">
+            Приглашаем Вас отпраздновать самое важное событие в нашей жизни -
+            день свадьбы!
           </p>
         </div>
 
         <div className="wedding-divider" />
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           <div>
             <p className="wedding-section-title font-bold text-lg">
-              Праздничный ужин
+              Свадебный вечер
+            </p>
+            <p className="mt-3 font-cormorant text-2xl font-normal italic text-wedding-accent">
+              18 июля 2026
             </p>
             <p className="wedding-body font-medium text-lg">
               18:00 • Банкетный зал "Eshil Ada"
@@ -501,9 +503,6 @@ function BackSide() {
                 ))}
               </div>
             )}
-            <p className="mt-3 font-cormorant text-xl font-normal italic text-wedding-accent">
-              Свадьба — 18 июля 2026
-            </p>
           </div>
         </div>
 
@@ -540,12 +539,10 @@ function BackSide() {
           <p className="font-cormorant text-xl font-normal text-wedding-accent">
             Подтвердите своё присутствие
             <br />
-            до 1 июня 2026
+            до 10 июня 2026
           </p>
           <p className="mt-3 font-cormorant text-lg font-light text-wedding-muted">
-            +7 (999) 123-45-67
-            <br />
-            wedding@example.com
+            +7 (978) 786-56-83
           </p>
         </div>
 
