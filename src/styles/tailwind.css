@@ -1,0 +1,22 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+@layer components {
+  .wedding-divider {
+    @apply mx-auto h-px w-20 bg-gradient-to-r from-transparent via-wedding-gold/50 to-transparent;
+  }
+
+  .wedding-section-title {
+    @apply mb-2 font-playfair text-sm font-medium uppercase tracking-[0.15em] text-wedding-accent;
+  }
+
+  .wedding-body {
+    @apply font-cormorant text-base font-normal text-wedding-text;
+  }
+
+  .wedding-body-muted {
+    @apply mt-1 font-cormorant text-[0.9rem] font-light text-wedding-muted;
+  }
+}
