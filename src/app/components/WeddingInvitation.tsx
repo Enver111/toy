@@ -530,7 +530,7 @@ function BackSide({
         <Reveal animated={animated} playWhen={playWhen} delay={0.4}>
           <div>
             <p className=" wedding-section-title text-lg font-bold">
-              До бракосочетания
+              До свадьбы осталось
             </p>
             {countdown.isPast ? (
               <p className="font-cormorant text-2xl font-normal italic text-wedding-text">
@@ -593,7 +593,7 @@ function BackSide({
             <p className="font-cormorant text-xl font-normal text-wedding-accent">
               Подтвердите своё присутствие
               <br />
-              до 10 июня 2026
+              до 10 июля 2026
             </p>
             <p className="mt-3 font-cormorant text-lg font-light text-wedding-muted">
               +7 (978) 786-56-83
